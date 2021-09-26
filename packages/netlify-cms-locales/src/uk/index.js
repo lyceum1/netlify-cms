@@ -1,4 +1,17 @@
 const uk = {
+  auth: {
+    login: 'Вхід',
+    loggingIn: 'Вхід...',
+    loginWithNetlifyIdentity: 'Увійти з Netlify Identity',
+    loginWithAzure: 'Увійти з Azure',
+    loginWithBitbucket: 'Увійти Bitbucket',
+    loginWithGitHub: 'Увійти з GitHub',
+    loginWithGitLab: 'Увійти з GitLab',
+    errors: {
+      email: 'Введіть email.',
+      password: 'Введіть пароль.',
+    },
+  },
   app: {
     header: {
       content: 'Зміст',
@@ -20,16 +33,38 @@ const uk = {
   collection: {
     sidebar: {
       collections: 'Колекції',
+      allCollections: 'Всі колекції',
       searchAll: 'Пошук',
+      searchIn: 'Шукати в',
     },
     collectionTop: {
+      sortBy: 'Сортувати за',
       viewAs: 'Змінити вигляд',
       newButton: 'Створити %{collectionLabel}',
+      ascending: 'За зростанням',
+      descending: 'За спаданням',
+      searchResults: 'Резльтати пошуку за "%{searchTerm}"',
+      searchResultsInCollection: 'Результати пошуку за "%{searchTerm}" в %{collection}',
+      filterBy: 'Фільтрувати за',
+      groupBy: 'Групувати за',
     },
     entries: {
       loadingEntries: 'Завантаження записів',
       cachingEntries: 'Кешування записів',
       longerLoading: 'Це може зайняти декілька хвилинок',
+      noEntries: 'Немає записів',
+    },
+    groups: {
+      other: 'Інше',
+      negateLabel: 'Не %{label}',
+    },
+    defaultFields: {
+      author: {
+        label: 'Автор',
+      },
+      updatedOn: {
+        label: 'Оновлено о',
+      },
     },
   },
   editor: {
@@ -46,6 +81,15 @@ const uk = {
         range: 'значення %{fieldLabel} повинне бути від %{minValue} до %{maxValue}.',
         min: 'значення %{fieldLabel} має бути від %{minValue}.',
         max: 'значення %{fieldLabel} має бути %{maxValue} та менше.',
+        rangeCount: '%{fieldLabel} повинно мати від %{minCount} до %{maxCount} елементів.',
+        rangeCountExact: '%{fieldLabel} повинно мати рівно %{count} елемент(ів).',
+        rangeMin: '%{fieldLabel} повинно містити як мінімум %{minCount} елемент(ів).',
+        rangeMax: '%{fieldLabel} повинно містити максимум %{maxCount} елемент(ів).',
+        invalidPath: `'%{path}' є невалідним шляхом`,
+        pathExists: `Шлях '%{path}' вже існує`,
+      },
+      i18n: {
+        writingInLocale: 'Написання в %{locale} локалі',
       },
     },
     editor: {
@@ -56,6 +100,7 @@ const uk = {
       onPublishingWithUnsavedChanges:
         'Присутні незбережені зміни, будь ласка збережіть їх перед публікацією.',
       onPublishing: 'Ви дійсно бажаєте опублікувати запис?',
+      onUnpublishing: 'Ви впевнені, що хочете відмінити публікацію запису?',
       onDeleteWithUnsavedChanges:
         'Ви дійсно бажаєте видалити опублікований запис, як і всі незбережені зміни під час поточної сесії?',
       onDeletePublishedEntry: 'Ви дійсно бажаєте видалити опублікований запис?',
@@ -66,17 +111,30 @@ const uk = {
       loadingEntry: 'Завантаження...',
       confirmLoadBackup: 'Відновлено резервну копію, бажаєте її використати?',
     },
+    editorInterface: {
+      toggleI18n: 'Дивитись переклад',
+      togglePreview: 'Дивитись прев‘ю',
+      toggleScrollSync: 'Синхронний скролінг',
+    },
     editorToolbar: {
       publishing: 'Публікація...',
       publish: 'Опублікувати',
       published: 'Опубліковано',
+      unpublish: 'Відкликати',
+      duplicate: 'Дублювати',
+      unpublishing: 'Відкликання...',
       publishAndCreateNew: 'Опублікувати і створити нову',
+      publishAndDuplicate: 'Опублікувати та дублювати',
       deleteUnpublishedChanges: 'Видалити неопубліковані зміни',
       deleteUnpublishedEntry: 'Видалити неопубліковану сторінку',
       deletePublishedEntry: 'Видалити опубліковану сторінку',
       deleteEntry: 'Видалити',
       saving: 'Збереження...',
       save: 'Зберегти',
+      statusInfoTooltipDraft:
+        'Запис знаходиться в статусі чорновика. Щоб відправити його на розгляд, змініть статус на ‘На розгляді’',
+      statusInfoTooltipInReview:
+        'Запис знаходиться на розгляді, ніякі додаткові дії не потрібні. Ви можете робити зміни в записі, поки він розглядається.',
       deleting: 'Видалення...',
       updating: 'Оновлення...',
       status: 'Cтан: %{status}',
@@ -92,13 +150,33 @@ const uk = {
       deployButtonLabel: 'Переглянути наживо',
     },
     editorWidgets: {
+      markdown: {
+        bold: 'Напівжирний',
+        italic: 'Курсив',
+        code: 'Код',
+        link: 'Посилання',
+        linkPrompt: 'Вставте посилання',
+        headings: 'Заголовки',
+        quote: 'Цитата',
+        bulletedList: 'Маркований список',
+        numberedList: 'Нумерований список',
+        addComponent: 'Додати компоненту',
+        richText: 'Rich Text',
+        markdown: 'Markdown',
+      },
       image: {
         choose: 'Виберіть зображення',
+        chooseUrl: 'Вставити з посилання',
+        replaceUrl: 'Замінити з посилання',
+        promptUrl: 'Вставте адресу зображення',
         chooseDifferent: 'Виберіть інше зображення',
         remove: 'Видалити зображення',
       },
       file: {
         choose: 'Виберіть файл',
+        chooseUrl: 'Вставити з посилання',
+        replaceUrl: 'Замінити з посилання',
+        promptUrl: 'Вставте посилання на файл',
         chooseDifferent: 'Виберіть інший файл',
         remove: 'Видалити файл',
       },
@@ -121,9 +199,15 @@ const uk = {
   mediaLibrary: {
     mediaLibraryCard: {
       draft: 'В роботі',
+      copy: 'Копіювати',
+      copyUrl: 'Копіювати посилання',
+      copyPath: 'Копіювати шлях',
+      copyName: 'Копіювати назву',
+      copied: 'Скопійовано',
     },
     mediaLibrary: {
       onDelete: 'Ви дійсно бажаєте видалити обрані матеріали?',
+      fileTooLarge: 'Файл завеликий.\nКонфігурацією заборонені файли більші ніж %{size} kB.',
     },
     mediaLibraryModal: {
       loading: 'Завантаження...',
@@ -136,12 +220,16 @@ const uk = {
       search: 'Пошук...',
       uploading: 'Завантаження...',
       upload: 'Завантажити',
+      download: 'Зберегти',
       deleting: 'Видалення...',
       deleteSelected: 'Видалити обране',
       chooseSelected: 'Додати обране',
     },
   },
   ui: {
+    default: {
+      goBackToSite: 'Повернутись до сайту',
+    },
     errorBoundary: {
       title: 'Помилка',
       details: 'Відбулась помилка - будь ласка ',
@@ -166,10 +254,14 @@ const uk = {
         "Йой, здається пропущено обов'язкове поле. Будь ласка, заповніть перед збереженням.",
       entrySaved: 'Збережено',
       entryPublished: 'Опубліковано',
+      entryUnpublished: 'Публікація запису відмінена',
       onFailToPublishEntry: 'Помилка публікації: %{details}',
+      onFailToUnpublishEntry: 'Не вдалось відмінити публікацію запису: %{details}',
       entryUpdated: 'Статус оновлено',
       onDeleteUnpublishedChanges: 'Видалено неопубліковані зміни',
       onFailToAuth: '%{details}',
+      onLoggedOut: 'Ви були розлогінені. Будь ласка, збережіть дані та авторизуйтесь знову.',
+      onBackendDown: 'Бекенд сервер недоступний. Для додаткової інформації дивіться %{details}',
     },
   },
   workflow: {
